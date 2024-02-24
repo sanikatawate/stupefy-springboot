@@ -1,0 +1,22 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/test
+        username: postgres
+        password: mysecretpassword
+        driver-class-name: org.postgresql.Driver
+    flyway:
+        baseline-on-migration: true
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+        database: postgresql
+
+server:
+    port: 5000
+
+
+
