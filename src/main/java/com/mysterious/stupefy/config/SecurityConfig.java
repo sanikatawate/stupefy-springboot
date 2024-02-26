@@ -42,7 +42,7 @@ public class SecurityConfig{
     public SecurityFilterChain securityFilterChain(@NotNull HttpSecurity httpSecurity) throws Exception{
         return httpSecurity.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth->auth
-                .requestMatchers("/auth/welcome", "auth/signup", "/auth/generateToken", "/").permitAll()
+                .requestMatchers("/auth/welcome", "auth/signup", "/auth/generateToken", "/", "/auth/user/**", "/books/**").permitAll()
 //                .requestMatchers("/auth/user/**").hasRole(Role.USER.name())
 //                .requestMatchers("/auth/admin/**").hasRole(Role.ADMIN.name())
                                 .anyRequest().authenticated()

@@ -31,7 +31,7 @@ public class UserController {
     }
 
     @GetMapping("/user/userProfile")
-    @PreAuthorize("hasAuthority('USER')")
+//    @PreAuthorize("hasRole(Role.USER.name()")
     public String userProfile(){
         return "Welcome User";
     }
